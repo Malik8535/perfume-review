@@ -1,3 +1,8 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
 body{
     background-color: hsl(30, 38%, 92%);
     display: flex;
@@ -14,8 +19,9 @@ body{
 
 .container{
     max-width: 450px;
+    max-height:50vh;
     display: flex;
-    align-items: stretch;
+    align-items:stretch;
     justify-content: center;
     background-color: white;
     border-radius: 10px;
@@ -24,13 +30,13 @@ body{
 
 }
 .image-box{
-    width: 50%;
-    overflow: hidden;
+    width:50%;
+    overflow:clip;
     
 }
 .image-box img{
     width: 100%;
-    object-fit: cover;
+    object-fit:fill;
     height: 100%;
     
 
@@ -39,49 +45,64 @@ body{
 
 
 .content{
+    display: flex;
+    flex-direction: column;
+    gap:5px;
     width:50% ;
-    padding: 20px;
+    padding:8px 17px;
 }
 .content .perfume { 
   font-family:"Montserrat"  sans-serif;
   font-optical-sizing: auto;
   font-weight: 10px;
   font-style: normal;
+  font-size:x-small;
   letter-spacing: 5px;
+  box-sizing: border-box;
+  /* margin-bottom:20px; */
 
 }
 .content .french{
   font-family: "Fraunces", serif;
   font-optical-sizing: auto;
-  font-weight: 500px;
-  font-size: 30px;
+  font-weight:smaller;
+  font-size: 29px;
 
   font-style: normal;
   line-height: 1;
   color: hsl(212, 21%, 14%) ;
     
 }
+
+.comment{
+    font-size:13px;
+    font-weight:small;
+}
 .content .price{
     color: green;
     font-weight: 100%;
 }
 .content .button{
-    height: 35px;
+    height:3rem;
     border-radius:8px;
     background-color:  hsl(158, 36%, 37%);
-    width: 90%;
+    width: 100%;
     color: white;
     gap: 5px; ;
     display: flex;
-    margin-top: 20px;
+    margin-bottom: 15px;
     justify-content: center;
     font-size:small;
     align-items: center;
-
+    padding:0 10px;
+}
+img{
+    width:10px;
 }
  .prices .big{
-    font-size: large;
-    font-weight: 1000;
+
+    font-size:1.5rem;
+    font-weight:bolder;
     color: hsl(158, 36%, 37%);
 }
  .prices .small{
@@ -97,4 +118,81 @@ body{
 .button{
    border: none; 
 }
+ @media (max-width:24em){
+    
+  body{
+    background-color:hsl(30, 38%, 92%);
+    display:flex;
+    flex-direction:column;
+    height: 100vh;
+    /* margin: auto; */
+    padding-bottom:6px;
+    padding-right:5px;
+                    
+    } 
+.container{
+        max-width:320px;
+        max-height:100%;
+        margin:auto;
+        display:grid;
+        grid-template-columns:1fr;
+        grid-template-rows:1fr;
+        /* row-gap:1rem; */
+        /* justify-items:center; */
+        /* align-items:stretch; *
 
+        /* /* gap:10px;  */
+        background-color:white;
+        border-radius: 10px;
+        overflow: hidden;  
+        /* padding:30px; */
+
+    }
+    
+.content{
+        display: flex;
+        flex-direction: column;
+        gap:6px;
+        width:85% ;
+        /* max-height:50%; */
+        padding:8px 25px;
+        
+}
+    .content .french{
+        font-family: "Fraunces", serif;
+        font-optical-sizing: auto;
+        font-weight:bolder;
+        font-size:1.5rem;
+      
+        font-style: normal;
+        line-height: 1;
+        color: hsl(212, 21%, 14%) ;
+          
+      }
+    .content .button{
+        margin-bottom:10px;
+
+      }
+      .comment{
+        font-size:15px;
+        font-weight:smaller;
+        line-height:1.5rem;
+    }
+      
+    .image-box{
+        min-width:100%;
+        overflow:clip;
+        
+    }
+    .image-box img{
+        width: 100%;
+        object-fit:cover;
+        height: 100%;
+        
+    
+    }
+    
+    
+}
+    
+ 
